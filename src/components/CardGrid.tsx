@@ -1,4 +1,5 @@
 import type { Card } from '../cards'
+import { resolvePublicAsset } from '../utils/assets'
 
 type CardGridProps = {
   cards: Card[]
@@ -17,7 +18,12 @@ function CardGrid({ cards, onSelect }: CardGridProps) {
           aria-label={`Открыть карточку ${card.id}`}
         >
           <span className="grid-card__frame">
-            <img className="grid-card__image" src={card.image} alt="" loading="lazy" />
+            <img
+              className="grid-card__image"
+              src={resolvePublicAsset(card.image)}
+              alt=""
+              loading="lazy"
+            />
           </span>
         </button>
       ))}

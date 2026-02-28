@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import type { Card } from '../cards'
+import { resolvePublicAsset } from '../utils/assets'
 
 type CardModalProps = {
   card: Card | null
@@ -60,7 +61,7 @@ function CardModal({ card, flipped, onClose, onFlip }: CardModalProps) {
             aria-label={flipped ? 'Показать лицевую сторону' : 'Показать обратную сторону'}
           >
             <span className="modal-card__face modal-card__face--front">
-              <img className="modal-card__image" src={card.image} alt="" />
+              <img className="modal-card__image" src={resolvePublicAsset(card.image)} alt="" />
             </span>
 
             <span className="modal-card__face modal-card__face--back">
