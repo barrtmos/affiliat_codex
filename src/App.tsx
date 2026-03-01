@@ -24,7 +24,9 @@ function App() {
 
   return (
     <main className="app-shell">
-      <header className="page-header" aria-label="Шапка сайта" />
+      <header className="page-header" aria-label="Шапка сайта">
+        <h1 className="page-title">Affiliat Codex</h1>
+      </header>
 
       <CardGrid cards={cards} onSelect={handleSelectCard} />
       <CardModal
